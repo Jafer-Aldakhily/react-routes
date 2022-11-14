@@ -7,19 +7,20 @@ import NotFound from './components/NotFound';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Tour from './components/Tour';
+import { CitiesProvider } from './CitiesContext';
 function App() {
   return (
    <>
    <Header />
-
+    <CitiesProvider>
    <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/city:id" element={<Tour />} />
-      <Route path="/*" element={<NotFound />} />
+      <Route path="/city/:id" element={<Tour />} />
+      {/* <Route path="/*" element={<NotFound />} /> */}
    </Routes>
-
+   </CitiesProvider>
    <Footer />
    </>
   );
